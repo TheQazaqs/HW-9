@@ -1,0 +1,25 @@
+public class WeatherForecast
+{
+    private int temperature;
+    private string conditions;
+
+    public WeatherForecast(int temperature, string conditions)
+    {
+        SetTemperature(temperature);
+        this.conditions = conditions;
+    }
+
+    public void SetTemperature(int temp)
+    {
+        if (temp > 15)
+        {
+            throw new ArgumentOutOfRangeException("Температура слишком высокая для зимнего сезона");
+        }
+        temperature = temp;
+    }
+
+    public string GetForecast()
+    {
+        return $"Температура: {temperature}°C, Погодные условия: {conditions}";
+    }
+}
