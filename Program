@@ -1,0 +1,18 @@
+public class Program
+{
+    public static void Main()
+    {
+        try
+        {
+            WeatherForecast forecast = new WeatherForecast(-5, "снег");
+
+            Console.WriteLine(forecast.GetForecast());
+
+            forecast.SetTemperature(20);
+        }
+        catch (ArgumentOutOfRangeException e)
+        {
+            Console.WriteLine($"Ошибка: {e.Message}");
+        }
+    }
+}
